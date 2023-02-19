@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+
+  <%- include('../views/includes/scripts') %>
+
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="/img/logo.png" alt="">
+                  <span class="d-none d-lg-block">NiceAdmin</span>
+                </a>
+              </div><!-- End Logo -->
+
+              <% if(typeof msg !='undefined' ) { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <%= msg %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <% } %>
+
+                <% if(typeof message !='undefined' ) { %>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= message %>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  <% } %>
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">OTP</h5>
+                    <p class="text-center small">Check your mail we have send you a OTP for reset password</p>
+                  </div>
+
+                  <form action="/auth/authOtp" method="post" class="row g-3 needs-validation" novalidate>
+
+                    <div class="col-12">
+                      <label for="otp" class="form-label">Your OTP</label>
+                      <div class="input-group has-validation">
+                        <input type="text" name="otp" id="otp" class="form-control" id="otp" placeholder="Enter 4 digit otp" required>
+                        <div class="invalid-feedback">Please enter your otp.</div>
+                      </div>
+                    </div>
+
+    
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Change password</button>
+                    </div>
+                   
+                  </form>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/chart.js/chart.umd.js"></script>
+  <script src="/vendor/echarts/echarts.min.js"></script>
+  <script src="/vendor/quill/quill.min.js"></script>
+  <script src="/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>
